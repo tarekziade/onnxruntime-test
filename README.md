@@ -1,6 +1,11 @@
 Onnxruntime vs Llama.cpp
 ========================
 
+Specs:
+
+- Windows 11 AMD Ryzen Threadripper PRO 1- Cores 128G RAM
+
+
 
 Run onnx with `make run-onnx`  (CPU)
 Run llama.cpp with `make run-llama` (CPU)
