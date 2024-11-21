@@ -14,7 +14,7 @@ Hardware Specs:
 
 Software:
 
-- onnxruntime-genai (non CUDA for the CPU test)
+- onnxruntime-genai 0.5.1 (non CUDA for the CPU test)
 - llama.cpp (running on CPU only for the CPU test, using gl=0)
 
 
@@ -22,7 +22,7 @@ Software:
 CPU
 ---
 
-For macOS onnxruntime does not leverage CoreML or any other hardware acceleration on MacOS
+For macOS onnxruntime does not seem to leverage CoreML or any other hardware acceleration on MacOS
 as opposed as llama.cpp, making it 13x faster.
 
 For Windows, onnxruntime is 2 times faster than the non avx build of llama.cpp
