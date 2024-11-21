@@ -1,4 +1,10 @@
-llama-cli -m qwen2.5-0.5b-instruct-q5_k_m.gguf \
+FILE="qwen2.5-0.5b-instruct-q4_0.gguf"
+
+if [ ! -f "$FILE" ]; then
+  bin/huggingface-cli download Qwen/Qwen2.5-0.5B-Instruct-GGUF "$FILE" --local-dir .
+fi
+
+llama-cli -m "$FILE" \
   -co -sp -p "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nSummarize the following text: The tower is 324 metres (1,063 ft) tall, about the same height as an 81-storey building, and the tallest structure in Paris.
 Its base is square, measuring 125 metres (410 ft) on each side. During its construction, the Eiffel Tower surpassed the Washington
 Monument to become the tallest man-made structure in the world, a title it held for 41 years until the Chrysler Building in New York
