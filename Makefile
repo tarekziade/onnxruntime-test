@@ -23,9 +23,12 @@ clean:
 	rm -rf $(MODEL_DIR)/*
 	rm -rf $(QWEN_DIR)
 
-run: install
+run-onnx: install
 	${VENV_DIR}/bin/python3 run.py
 
-.PHONY: all download_model clean run
+run-llama: 
+	./llama.sh
+
+.PHONY: all download_model clean run-onnx runn-llama
 
 
