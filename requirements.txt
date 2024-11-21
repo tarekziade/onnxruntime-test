@@ -1,0 +1,6 @@
+numpy
+onnxruntime-genai
+huggingface-hub[cli]
+onnx
+transformers
+torch
