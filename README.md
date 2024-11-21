@@ -28,14 +28,14 @@ as opposed as llama.cpp, making it 13x faster.
 For Windows, onnxruntime is 2 times faster than the non avx build of llama.cpp
 and is 1.6x slower than the avx build of llama.cpp  
 
-Apple M1 onnx 4.85 tokens/s:
+Apple M1 onnx - new tokens per second **4.85 tokens/s**:
 
 ```
 Prompt length: 247, New tokens: 96, Time to first: 0.83s, Prompt tokens per second: 295.87 tps, New tokens per second: 4.85 tps
 ```
 
 
-Apple M1 llama 62 tokens/s:
+Apple M1 llama - new tokens per second **62 tokens/s**:
 
 ```
 llama_perf_sampler_print:    sampling time =      11,02 ms /   333 runs   (    0,03 ms per token, 30206,82 tokens per second)
@@ -47,13 +47,13 @@ llama_perf_context_print:       total time =    1927,63 ms /   332 tokens
 
 
 
-Windows 11 onnx 67 tokens/s:
+Windows 11 onnx - new tokens per second **67 tokens/s**:
 
 ```
 Prompt length: 247, New tokens: 97, Time to first: 0.38s, Prompt tokens per second: 643.80 tps, New tokens per second: 67.34 tps
 ```
 
-Windows 11 llama non avx 37 tokens/s:
+Windows 11 llama non avx - new tokens per second **37 tokens/s**:
 
 ```
 llama_perf_sampler_print:    sampling time =      10.06 ms /   328 runs   (    0.03 ms per token, 32591.41 tokens per second)
@@ -64,7 +64,7 @@ llama_perf_context_print:       total time =    5385.98 ms /   327 tokens
 ```
 
 
-Windows 11 avx 112 tokens/s:
+Windows 11 avx - new tokens per second **112 tokens/s**:
 
 ```
 llama_perf_sampler_print:    sampling time =      10.91 ms /   328 runs   (    0.03 ms per token, 30053.14 tokens per second)
