@@ -9,7 +9,7 @@ Models:
 Hardware Specs:
 
 - Apple M1 Pro 32GB
-- Windows 11 AMD Ryzen Threadripper PRO 1- Cores 128G RAM
+- Windows 11 AMD Ryzen Threadripper PRO 16 Cores 128G RAM
 
 
 Software:
