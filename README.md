@@ -1,11 +1,25 @@
 Onnxruntime vs Llama.cpp
 ========================
 
+
+CPU
+---
+
+For macOS onnxruntime does not leverage CoreML or any other hardware acceleration on MacOS
+as opposed as llama.cpp, making it 13x faster.
+
+For Windows, onnxruntime is 2 times faster than the non avx build of llama.cpp
+and is 1.6x slower than the avx build of llama.cpp  
+
 Specs:
 
+- Apple M1 Pro 32GB
 - Windows 11 AMD Ryzen Threadripper PRO 1- Cores 128G RAM
 
 
+Software:
+- onnxruntime-genai (non CUDA)
+- llama.cpp (running on CPU only)
 
 Run onnx with `make run-onnx`  (CPU)
 Run llama.cpp with `make run-llama` (CPU)
@@ -57,3 +71,8 @@ llama_perf_context_print:        eval time =     883.43 ms /    99 runs   (    8
 llama_perf_context_print:       total time =    1606.08 ms /   327 tokens
 ```
 
+
+GPU 
+---
+
+TBD
