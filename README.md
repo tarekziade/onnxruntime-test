@@ -19,6 +19,8 @@ Software:
 
 ### macOS
 
+![macOS perf](macos.png)
+
 
 - onnx int4 - **4.85 tokens/s**
 - onnx fp16: FAILS
@@ -30,6 +32,8 @@ Software:
 
 
 ### Windows 11 (non CUDA)
+
+![Windows 11 perf](win11.png)
 
 - onnx int4 - **67 tokens/s**
 - onnx fp16 - FAILS
