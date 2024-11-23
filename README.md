@@ -31,13 +31,13 @@ Software:
 - llama fp16 - **106 tokens/s**
 
 
-### Windows 11 (CPU)
+### Windows 11
 
 ![Windows 11 perf](win11.png)
 
-- onnx int4 - **67 tokens/s**
-- onnx fp16 - FAILS
-- onnx fp32 - **34 tokens/s**
+- onnx (cpu) int4 - **67 tokens/s**
+- onnx (cpu) fp16 - FAILS
+- onnx (cpu) fp32 - **34 tokens/s**
 - llama non-avx int4 - **37 tokens/s**
 - llama avx - int4 - **112 tokens/s**
 - llama avx512 - int4 FAILED
