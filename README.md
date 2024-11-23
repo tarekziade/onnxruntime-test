@@ -3,7 +3,7 @@ Onnxruntime vs Llama.cpp
 
 Models: 
 
-- Qwen2.5-0.5B-Instruct int4 for onnxruntime
+- Qwen2.5-0.5B-Instruct int4 or fp32 for onnxruntime
 - Qwen2.5-0.5B-Instruct GGUF q4_0 for llama.cpp
 
 Hardware Specs:
@@ -22,25 +22,26 @@ Software:
 CPU
 ---
 
-For macOS onnxruntime does not seem to leverage CoreML or any other hardware acceleration on MacOS
-as opposed as llama.cpp, making it 13x faster.
 
-For Windows, onnxruntime is 2 times faster than the non avx build of llama.cpp
-and is 1.6x slower than the avx build of llama.cpp  
+macOS
+#####
 
-Apple M1 onnx int4 - new tokens per second **4.85 tokens/s**:
+For macOS, onnxruntime is 13x slower than llama.cpp on int4.
+
+
+onnx int4 - new tokens per second **4.85 tokens/s**:
 
 ```
 Prompt length: 247, New tokens: 96, Time to first: 0.83s, Prompt tokens per second: 295.87 tps, New tokens per second: 4.85 tps
 ```
 
-Apple M1 onnx fp32 - new tokens per second **41.46 tps** 
+onnx fp32 - new tokens per second **41.46 tps** 
 
 ```
 Prompt length: 247, New tokens: 75, Time to first: 0.63s, Prompt tokens per second: 389.01 tps, New tokens per second: 41.46 tps
 ```
 
-Apple M1 llama int4 - new tokens per second **62 tokens/s**:
+llama int4 - new tokens per second **62 tokens/s**:
 
 ```
 llama_perf_sampler_print:    sampling time =      11,02 ms /   333 runs   (    0,03 ms per token, 30206,82 tokens per second)
@@ -49,6 +50,14 @@ llama_perf_context_print: prompt eval time =     294,28 ms /   233 tokens (    1
 llama_perf_context_print:        eval time =    1610,17 ms /    99 runs   (   16,26 ms per token,    61,48 tokens per second)
 llama_perf_context_print:       total time =    1927,63 ms /   332 tokens
 ```
+
+
+Windows 11 
+##########
+
+For Windows, onnxruntime is 2 times faster than the non avx build of llama.cpp
+and is 1.6x slower than the avx build of llama.cpp  
+
 
 Windows 11 onnx - new tokens per second **67 tokens/s**:
 
@@ -76,6 +85,7 @@ llama_perf_context_print: prompt eval time =     692.37 ms /   228 tokens (    3
 llama_perf_context_print:        eval time =     883.43 ms /    99 runs   (    8.92 ms per token,   112.06 tokens per second)
 llama_perf_context_print:       total time =    1606.08 ms /   327 tokens
 ```
+
 
 
 GPU 
