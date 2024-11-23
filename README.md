@@ -31,7 +31,7 @@ Software:
 - llama fp16 - **106 tokens/s**
 
 
-### Windows 11 (non CUDA)
+### Windows 11 (CPU)
 
 ![Windows 11 perf](win11.png)
 
