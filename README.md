@@ -1,5 +1,4 @@
-Onnxruntime vs Llama.cpp
-========================
+# Onnxruntime vs Llama.cpp
 
 Models: 
 
@@ -19,12 +18,10 @@ Software:
 
 
 
-CPU
----
+## CPU
 
 
-macOS
-#####
+### macOS
 
 For macOS, onnxruntime is 13x slower than llama.cpp on int4.
 
@@ -52,8 +49,7 @@ llama_perf_context_print:       total time =    1927,63 ms /   332 tokens
 ```
 
 
-Windows 11 
-##########
+### Windows 11
 
 For Windows, onnxruntime is 2 times faster than the non avx build of llama.cpp
 and is 1.6x slower than the avx build of llama.cpp  
@@ -88,7 +84,6 @@ llama_perf_context_print:       total time =    1606.08 ms /   327 tokens
 
 
 
-GPU 
----
+## GPU 
 
 TBD
