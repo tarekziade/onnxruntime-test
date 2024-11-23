@@ -44,10 +44,18 @@ def summarize_text(model_path):
 
     params = og.GeneratorParams(model)
     params.set_search_options(**search_options)
-    params.input_ids = input_tokens 
-    generator = og.Generator(model, params)
 
-    #generator.append_tokens(input_tokens)
+    try:
+        params.input_ids = input_tokens 
+        old = True
+    except Exception:
+        old = False
+
+
+    generator = og.Generator(model, params)
+    if not old:
+        generator.append_tokens(input_tokens)
+
     print("Generator created")
     print("Running generation loop ...")
 
@@ -57,7 +65,8 @@ def summarize_text(model_path):
     first = True
     try:
         while not generator.is_done():
-            generator.compute_logits()
+            if old:
+                generator.compute_logits()
             generator.generate_next_token()
             if first:
                 first_token_timestamp = time.time()

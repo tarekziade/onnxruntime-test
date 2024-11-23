@@ -1,18 +1,18 @@
 {
   "macOS": {
-    "onnx int4": 4.85,
-    "onnx fp32": 41.46,
-    "llama int4 ngl=0": 62,
-    "llama int4": 141,
-    "llama fp16 ngl=0": 39,
-    "llama fp16": 106
+    "onnx-int4": 4.85,
+    "onnx-fp32": 41.46,
+    "llama-int4": 62,
+    "llama-int4-gpu": 141,
+    "llama-fp16": 39,
+    "llama-fp16-gpu": 106
   },
   "Windows11": {
-    "onnx int4": 67,
-    "onnx fp32": 34,
-    "llama non-avx int4": 37,
-    "llama avx - int4": 112,
-    "llama avx - fp16": 22,
-    "llama non-avx fp16": 26
+    "onnx-cpu-int4": 67,
+    "onnx-cpu-fp32": 34,
+    "llama-int4": 37,
+    "llama-avx-int4": 112,
+    "llama-avx-fp16": 22,
+    "llama-fp16": 26
   }
 }
