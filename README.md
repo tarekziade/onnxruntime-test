@@ -31,6 +31,12 @@ Software:
 
 ### Windows 11 (non CUDA)
 
-- onnx int4 - **67 tokens/s**:
-- llama non-avx int4 - **37 tokens/s**:
-- llama avx - int4 - **112 tokens/s**:
+- onnx int4 - **67 tokens/s**
+- onnx fp16 - FAILS
+- onnx fp32 - **34 tokens/s**
+- llama non-avx int4 - **37 tokens/s**
+- llama avx - int4 - **112 tokens/s**
+- llama avx512 - int4 FAILED
+- llama avx - fp16 **22 tokens/s**
+- llama non-avx fp16 **26 tokens/s**
+
