@@ -24,7 +24,7 @@ clean:
 	rm -rf $(QWEN_DIR)
 
 run-onnx: install
-	${VENV_DIR}/bin/python3 run.py
+	${VENV_DIR}/bin/python3 run.py qwen
 
 run-llama: 
 	./llama.sh

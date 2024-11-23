@@ -1,6 +1,6 @@
 import onnxruntime_genai as og
 import time
-
+import sys
 
 prompt = """
 <|im_start|>system
@@ -81,4 +81,4 @@ def summarize_text(model_path):
 
 
 if __name__ == "__main__":
-    summarize_text("qwen")
+    summarize_text(sys.argv[-1])
