@@ -23,7 +23,12 @@ Software:
 
 ### macOS
 
-For macOS, onnxruntime is 13x slower than llama.cpp on int4.
+
+For macOS, using int4 onnxruntime is 13x slower than llama.cpp on int4 with
+ngl-0, x32 times slower when activating GPU layers in llama.cpp.
+
+Using fp32 is much faster in onnx.
+
 
 
 onnx int4 - new tokens per second **4.85 tokens/s**:
@@ -38,7 +43,7 @@ onnx fp32 - new tokens per second **41.46 tps**
 Prompt length: 247, New tokens: 75, Time to first: 0.63s, Prompt tokens per second: 389.01 tps, New tokens per second: 41.46 tps
 ```
 
-llama int4 - new tokens per second **62 tokens/s**:
+llama int4 ngl=0 - new tokens per second **62 tokens/s**:
 
 ```
 llama_perf_sampler_print:    sampling time =      11,02 ms /   333 runs   (    0,03 ms per token, 30206,82 tokens per second)
@@ -47,6 +52,17 @@ llama_perf_context_print: prompt eval time =     294,28 ms /   233 tokens (    1
 llama_perf_context_print:        eval time =    1610,17 ms /    99 runs   (   16,26 ms per token,    61,48 tokens per second)
 llama_perf_context_print:       total time =    1927,63 ms /   332 tokens
 ```
+
+llama int4 gpu layers -  new tokens per second **141 tokens/s**:
+
+```
+llama_perf_sampler_print:    sampling time =      11,34 ms /   333 runs   (    0,03 ms per token, 29359,90 tokens per second)
+llama_perf_context_print:        load time =     829,42 ms
+llama_perf_context_print: prompt eval time =      76,62 ms /   233 tokens (    0,33 ms per token,  3041,02 tokens per second)
+llama_perf_context_print:        eval time =     697,94 ms /    99 runs   (    7,05 ms per token,   141,85 tokens per second)
+llama_perf_context_print:       total time =     797,86 ms /   332 tokens
+```
+
 
 
 ### Windows 11
